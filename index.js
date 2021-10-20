@@ -3,11 +3,15 @@ const geojson = JSON.parse(await readFile(new URL("./data/countries.geojson", im
 
 import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
 
+/**
+ * @param {{lat: Number, lng: Number}} point {lat, lng}
+ * @returns {{code: String} | undefined} Object {country: String, code: String} | undefined
+ */
 export function getCountryCode(point) {
 	for (let feature of geojson.features) {
-		const res = booleanPointInPolygon(point, feature);
+		const res = booleanPointInPolygon([point.lng, point.lat], feature);
 		if (res) {
-			return feature.properties.ISO_A2;
+			return { country: feature.properties.country, code: feature.properties.ISO_A2 };
 		}
 	}
 }
