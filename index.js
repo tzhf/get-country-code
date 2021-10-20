@@ -9,8 +9,7 @@ import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
  */
 export function getCountryCode(point) {
 	for (let feature of geojson.features) {
-		const res = booleanPointInPolygon([point.lng, point.lat], feature);
-		if (res) {
+		if (booleanPointInPolygon([point.lng, point.lat], feature)) {
 			return { country: feature.properties.country, code: feature.properties.ISO_A2 };
 		}
 	}
