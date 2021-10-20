@@ -1,0 +1,12 @@
+{
+	"name": "getcountrycode",
+	"version": "1.0.0",
+	"description": "Small library that returns a country code from coordinates",
+	"type": "module",
+	"exports": "./index.js",
+	"dependencies": {
+		"@turf/boolean-point-in-polygon": "^6.5.0"
+	},
+	"author": "tzhf",
+	"license": "ISC"
+}
