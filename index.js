@@ -1,4 +1,4 @@
-import countries from './data/countries.js';
+import borders from "./data/borders.json";
 import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
 
 /**
@@ -6,7 +6,7 @@ import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
  * @returns {{code: String} | undefined} Object {country: String, code: String} | undefined
  */
 export function getCountryCode(point) {
-	for (let feature of countries.features) {
+	for (let feature of borders.features) {
 		if (booleanPointInPolygon([point.lng, point.lat], feature)) {
 			return { code: feature.properties.code, country: feature.properties.name };
 		}
