@@ -1,4 +1,4 @@
-import borders from "./data/borders.js";
+import borders from "./data/borders.json";
 import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
 
 /**
