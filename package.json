@@ -1,5 +1,5 @@
 {
-	"name": "getcountrycode",
+	"name": "get-country-code",
 	"version": "1.0.0",
 	"description": "Small library that returns a country code from coordinates",
 	"repository": "github:tzhf/get-country-code",
