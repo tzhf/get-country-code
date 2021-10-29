@@ -6,7 +6,10 @@
 	"author": "tzhf",
 	"license": "ISC",
 	"type": "module",
-	"exports": "./index.js",
+	"exports": {
+		".": "./index.js",
+		"./data": "./data/borders.json"
+	},
 	"dependencies": {
 		"@turf/boolean-point-in-polygon": "^6.5.0"
 	},
